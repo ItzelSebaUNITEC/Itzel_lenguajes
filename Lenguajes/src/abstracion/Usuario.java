@@ -13,7 +13,7 @@ public class Usuario {
     }
 
     public void setAltura(float altura) {
-        this.altura = valor;
+        this.altura = altura;
     }
 
     public float getPeso() {
