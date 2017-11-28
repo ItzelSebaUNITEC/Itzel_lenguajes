@@ -5,22 +5,32 @@
  */
 package conexion;
 import java.sql.*;
-/**
- *
- * @author T-102
- */
+
 public class ProbarConexion {
     public static void main(String[] args) { 
-        try{
-        Conexion.conectarse("root", " ");
+        Connection con=null;
+                try{
+       con=  Conexion.conectarse("root", "");
             System.out.println("Conectado");
             
+            
         }catch (ClassNotFoundException e){
+                    System.out.println("No se cargo bien el Driver");
             
         }catch (SQLException e){
+            
+                    System.out.println("Un error de SQL "+e.getMessage());
                     }finally{
+                    
+                    
+                    try{
+                        if (con!=null)con.close();    
+                        System.out.println(" se cerro la conexion ");
+                }catch (SQLException ex){
+ 
                     }
         }
     }
+}
     
 
